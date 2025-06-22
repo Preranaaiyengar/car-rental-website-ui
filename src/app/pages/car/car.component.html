@@ -1,0 +1,62 @@
+<form (ngSubmit)="searchCars()" #carForm="ngForm">
+    <input type="text" [(ngModel)]="pickupLocation" name="pickup" placeholder="Enter Pickup Location" required />
+    <input type="text" [(ngModel)]="dropLocation" name="drop" placeholder="Enter Drop Location" required />
+    <input type="date" [(ngModel)]="pickupDate" name="pickupDate" required />
+    <button type="submit">Search Cars</button>
+  </form>
+  
+  <!-- Modal Popup -->
+  <div *ngIf="showPopup" class="modal-backdrop">
+    <div class="modal-content">
+      <h2>Oops!</h2>
+      <p>Please fill in Pickup, Drop locations and Pickup Date.</p>
+      <button (click)="closePopup()">Got it!</button>
+    </div>
+  </div>
+  
+  <!-- Loading Message -->
+  <div *ngIf="loading" class="loading">
+    🚗 Searching available cars for you...
+  </div>
+  
+  <!-- Cars Grid -->
+  <div *ngIf="!loading && cars.length > 0" class="cars-grid">
+    <div *ngFor="let car of cars" class="car-card">
+      <img [src]="car.image" alt="Car Image" />
+      <div class="card-content">
+        <h2>{{ car.name }}</h2>
+        <p>Type: {{ car.type }}</p>
+        <p>Seats: {{ car.seats }}</p>
+        <p>Price: ₹{{ car.price }}/day</p>
+        <button (click)="openBooking(car)">Book Now</button>
+
+      </div>
+    </div>
+  </div>
+  <!-- Booking Form Modal -->
+<div *ngIf="showBookingForm" class="modal-backdrop">
+    <div class="modal-content">
+      <h2>Enter Your Details</h2>
+      <input type="text" [(ngModel)]="customer.name" placeholder="Full Name" required />
+      <input type="tel" [(ngModel)]="customer.phone" placeholder="Phone Number" required />
+      <input type="tel" [(ngModel)]="customer.whatsapp" placeholder="WhatsApp Number" />
+      <input type="email" [(ngModel)]="customer.email" placeholder="Email" />
+      <button (click)="submitBooking()">Confirm Booking</button>
+    </div>
+  </div>
+  
+  <!-- Loading Screen -->
+  <div *ngIf="bookingLoading" class="loading-screen">
+    <div class="loading-animation">⏳ Confirming your booking...</div>
+  </div>
+  
+  <!-- Success Confirmation -->
+  <div *ngIf="bookingConfirmed" class="modal-backdrop">
+    <div class="modal-content">
+      <h2>✅ Booking Confirmed!</h2>
+      <p>Our team will contact you soon via WhatsApp or Phone Call.</p>
+      <button (click)="closeAll()">Close</button>
+    </div>
+  </div>
+  
+  
