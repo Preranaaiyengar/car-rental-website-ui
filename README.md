@@ -1,59 +1,86 @@
-# CarRental
+# 🚗 CarRental - Angular Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.2.
+**Status:** 🚧 Ongoing Project
 
-## Development server
+This is a web-based Car Rental UI built using Angular. The goal is to provide a responsive and user-friendly interface for customers to browse, book, and manage car rental services.
 
-To start a local development server, run:
+> 🔧 Currently building features like cab booking,trip package etc.
+
+## 🔗 Live Demo  
+🌐 [Click here to view the website](https://car-rental-d6b46.web.app)
+
+---
+
+## ✨ Key Features
+
+- ⚡ Standalone Angular v19 app (no `app.module.ts`)
+- 🖌️ Styled with SCSS, gradients, card-based UI
+- 🧭 Client-side routing (Home, Car Booking, etc.)
+- 🪄 Form animations and modal confirmation
+- 📱 Fully responsive on mobile & tablet
+- 🔥 Firebase Hosting & deployment ready
+
+---
+
+## 💻 Tech Stack
+
+| Tech        | Purpose                 |
+|-------------|--------------------------|
+| Angular 19  | Frontend Framework        |
+| Firebase    | Hosting and Deployment    |
+| SCSS        | Advanced styling          |
+| Figma       | UI/UX Design reference    |
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Run Locally
 
 ```bash
+git clone https://github.com/Preranaaiyengar/car-rental-website-ui.git
+cd car-rental-website-ui
+npm install
 ng serve
 ```
+Then visit: http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🏗️ Production Build
 
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
+Make sure firebase.json has:
+"public": "dist/browser"
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+Then deploy using:
 ```bash
-ng generate --help
+firebase deploy
 ```
 
-## Building
+## 📁 Folder Structure
+src/
+│
+├── app/
+│   ├── pages/          # Home, Car, Booking pages
+│   ├── components/     # Reusable components
+│   └── app.component.ts
+│
+├── assets/
+├── styles/
+└── index.html
 
-To build the project run:
+## 👩‍💻 Developer
+Name: Prerana Iyengar
+Frontend: Angular, SCSS
+Designer: Figma
+Email: prerana.iyengaar@gmail.com
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## ⭐ Show Some Love
+If this project helped you or impressed you, give it a ⭐ on GitHub!
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
